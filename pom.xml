@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.dheeraj.spelltutor</groupId>
+	<artifactId>spell-tutor</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>Spelling Tutor</name>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>setup.py</include>
+					<include>MANIFEST.in</include>
+					<include>requirements.txt</include>
+				</includes>
+				<targetPath>C:\Users\dheer\OneDrive\Documents\GitHub\spell_tutor\target\classes\generated-sources</targetPath>
+				<filtering>true</filtering>
+			</resource>
+
+			<resource>
+				<directory>C:\Users\dheer\OneDrive\Documents\GitHub\spell_tutor\</directory>
+				<targetPath>C:\Users\dheer\OneDrive\Documents\GitHub\spell_tutor\target\classes\generated-sources\spell_tutor</targetPath>
+				<filtering>false</filtering>
+			</resource>
+
+			<resource>
+				<directory>C:\Users\dheer\OneDrive\Documents\GitHub\spell_tutor\spelltutor\resources</directory>
+				<targetPath>C:\Users\dheer\OneDrive\Documents\GitHub\spell_tutor\target\classes\generated-sources\generated-sources\resources</targetPath>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<id>generate-package</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>python</executable>
+							<workingDirectory>.</workingDirectory>
+							<arguments>
+								<argument>setup.py</argument>
+								<argument>sdist</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>install-dependencies</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>							
+							<executable>pip</executable>
+							<workingDirectory>./dist</workingDirectory>
+							<arguments>
+								<argument>install</argument>
+								<argument>--user</argument>
+								<argument>spell-tutor-0.1.tar.gz</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<!--execution>
+						<id>python-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>python</executable>
+							<arguments>
+								<argument>-m</argument>
+								<argument>coverage</argument>
+								<argument>run</argument>
+								<argument>setup.py</argument>
+								<argument>test</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>coverage-report-xml</id>
+						<phase>test</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>python</executable>
+							<arguments>
+								<argument>-m</argument>
+								<argument>coverage</argument>
+								<argument>xml</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>coverage-report-html</id>
+						<phase>test</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>python</executable>
+							<arguments>
+								<argument>-m</argument>
+								<argument>coverage</argument>
+								<argument>html</argument>
+							</arguments>
+						</configuration>
+					</execution-->
+				</executions>
+			</plugin>
+
+		</plugins>
+
+	</build>
+</project>

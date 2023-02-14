@@ -1,0 +1,4 @@
+mock
+plotly
+coverage
+termcolor

@@ -1,0 +1,4 @@
+include requirements.txt 
+recursive-include spelltutor\resources *
+recursive-include spelltutor *.py
+global-exclude __pycache__
