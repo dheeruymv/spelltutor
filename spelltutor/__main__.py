@@ -20,7 +20,7 @@ def _display_welcome_message(user_name):
             print(colored("Choice has been entered incorrectly mulitple times restart the game and provide correct number to continue".upper(), "red", attrs=['underline','bold']))
 
 def _display_wc_message_and_get_number(user_name):
-    print("Hi colored({}, "Blue"), What would you like to learn? Choose from below and enter the number \n".format(user_name))
+    print("Hi colored({}, \"Blue\"), What would you like to learn? Choose from below and enter the number \n".format(user_name))
     print("1. Spellings \n")
     print("2. Jumbled words \n")
     number = input("Enter your choice: ")
