@@ -1,5 +1,6 @@
 import random
 from spelltutor.utils.prop_reader import PropertyUtil
+from termcolor import colored
 
 class Tutor:
 
@@ -46,12 +47,15 @@ class Tutor:
 
     
     def _get_sub_game(self):
-        if int(self._inp_choice) == 1:
-            return "letter_to_spellings"
-        elif int(self._inp_choice) == 2:
-            return "jumbled_words"
-        else:
-            return f"Entered number {self._inp_choice} is in-correct, Enter correct number"
+        try:
+            if int(self._inp_choice) == 1:
+                return "letter_to_spellings"
+            elif int(self._inp_choice) == 2:
+                return "jumbled_words"
+            else:
+                return f"Entered number {self._inp_choice} is in-correct, Enter correct number"
+        except ValueError:
+            print(colored("Entered Value is wrong!!", "red"))
 
     def _get_word_from_prop(self, sub_game, inp_letter):
         #print("Prop file is : {}".format(sub_game))
