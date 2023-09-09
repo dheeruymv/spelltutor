@@ -16,19 +16,19 @@
 					<include>MANIFEST.in</include>
 					<include>requirements.txt</include>
 				</includes>
-				<targetPath>C:\Users\dheer\OneDrive\Documents\GitHub\spell_tutor\target\classes\generated-sources</targetPath>
+				<targetPath>.\generated-sources</targetPath>
 				<filtering>true</filtering>
 			</resource>
 
 			<resource>
-				<directory>C:\Users\dheer\OneDrive\Documents\GitHub\spell_tutor\</directory>
-				<targetPath>C:\Users\dheer\OneDrive\Documents\GitHub\spell_tutor\target\classes\generated-sources\spell_tutor</targetPath>
+				<directory>.\spelltutor</directory>
+				<targetPath>.\generated-sources\spell_tutor</targetPath>
 				<filtering>false</filtering>
 			</resource>
 
 			<resource>
-				<directory>C:\Users\dheer\OneDrive\Documents\GitHub\spell_tutor\spelltutor\resources</directory>
-				<targetPath>C:\Users\dheer\OneDrive\Documents\GitHub\spell_tutor\target\classes\generated-sources\generated-sources\resources</targetPath>
+				<directory>.\resources</directory>
+				<targetPath>.\generated-sources\resources</targetPath>
 				<filtering>false</filtering>
 			</resource>
 		</resources>
